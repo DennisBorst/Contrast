@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Clickable : MonoBehaviour
+public class Destroyable : MonoBehaviour
 {
     [SerializeField] private bool interactable = true;
     private Animator anim;
@@ -11,6 +11,11 @@ public class Clickable : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         anim.enabled = false;
+    }
+
+    private void Update()
+    {
+        
     }
 
     void OnMouseOver()

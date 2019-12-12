@@ -26,9 +26,6 @@ public class PlayerMovement : MonoBehaviour
     //GameObject stuff
     [Header("GameObject stuff")]
     private Rigidbody2D rb;
-    private BoxCollider2D collider;
-    private float hitDirectionX;
-    private float hitDirectionY;
 
     //keyCodes
     [HideInInspector] public KeyCode baseAttackCode;
@@ -37,7 +34,6 @@ public class PlayerMovement : MonoBehaviour
     private KeyCode startButton;
 
     //other
-    private int wallDirX;
     public Vector2 input;
 
     //Hit related (probably not necessary)
@@ -53,7 +49,6 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        collider = GetComponent<BoxCollider2D>();
         beginGravity = rb.gravityScale;
         ConfigureControlButtons();
 
@@ -122,7 +117,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "DeathZone")
+        if(collision.gameObject.tag == "DeathZone" || collision.gameObject.tag == "Enemy")
         {
             Respawn();
         }
@@ -164,27 +159,9 @@ public class PlayerMovement : MonoBehaviour
                 {
                     //take damage
                     Debug.Log("enemy hit");
-                    GotHit(collision.gameObject.GetComponent<Hitbox>());
                 }
             }
         }
-    }
-
-    private void GotHit(Hitbox hit)
-    {
-        knockbackHit = true;
-        rb.isKinematic = true;
-
-        characterThatHitYou = hit.Character;
-        damageTaken += hit.Damage;
-
-        hitDirectionX = (characterThatHitYou.transform.position.x - this.transform.position.x);
-        hitDirectionY = (characterThatHitYou.transform.position.y - this.transform.position.y);
-
-        Vector2Int _dir = Vector2Int.zero;
-
-        _dir.x = hitDirectionX > 0 ? -1 : 1;
-        rb.velocity = new Vector2(_dir.x * hit.forceDirection.x * damageTaken, hit.forceDirection.y * damageTaken);
     }
 
     private void Respawn()
