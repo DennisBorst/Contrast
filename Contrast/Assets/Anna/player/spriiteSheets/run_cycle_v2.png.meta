@@ -1,34 +1,34 @@
 fileFormatVersion: 2
-guid: 23d67771962777f47b6fe3176a2bbbc4
+guid: 4731f7fb8042c2447aca9dcab96ff2bd
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7408788832637473452
-    second: run_cycle_0
+      213: 3629619343677586256
+    second: run_cycle_v2_0
   - first:
-      213: -8144471410565766370
-    second: run_cycle_1
+      213: -2683403692755367116
+    second: run_cycle_v2_1
   - first:
-      213: -1389990550625635539
-    second: run_cycle_2
+      213: 8694964030843183629
+    second: run_cycle_v2_2
   - first:
-      213: -1026630202277179033
-    second: run_cycle_3
+      213: 692127700247052209
+    second: run_cycle_v2_3
   - first:
-      213: 6235638111069562078
-    second: run_cycle_4
+      213: 7806038656265360880
+    second: run_cycle_v2_4
   - first:
-      213: 5810789559147188179
-    second: run_cycle_5
+      213: 6149185514858871357
+    second: run_cycle_v2_5
   - first:
-      213: -1154805980479187755
-    second: run_cycle_6
+      213: -7846570681464047953
+    second: run_cycle_v2_6
   - first:
-      213: 659527209669431860
-    second: run_cycle_7
+      213: -1897913128915230070
+    second: run_cycle_v2_7
   - first:
-      213: 3445524075170962677
-    second: run_cycle_8
+      213: -3757999451305974937
+    second: run_cycle_v2_8
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -63,7 +63,7 @@ TextureImporter:
     mipBias: -100
     wrapU: 1
     wrapV: 1
-    wrapW: -1
+    wrapW: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -121,206 +121,194 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: run_cycle_0
+      name: run_cycle_v2_0
       rect:
         serializedVersion: 2
         x: 0
         y: 1015
         width: 469
         height: 469
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a18353a896c513242941a024624bab11
-      internalID: 7408788832637473452
+      spriteID: 42c82189bf84f0a47b9e26387d7e8e59
+      internalID: 3629619343677586256
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: run_cycle_1
+      name: run_cycle_v2_1
       rect:
         serializedVersion: 2
         x: 469
         y: 1015
         width: 469
         height: 469
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0d5a71148bfdc4643afbfc7d8aa84795
-      internalID: -8144471410565766370
+      spriteID: 48938b26feabd79469a07d98981c86fd
+      internalID: -2683403692755367116
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: run_cycle_2
+      name: run_cycle_v2_2
       rect:
         serializedVersion: 2
         x: 938
         y: 1015
         width: 469
         height: 469
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cee6a27bbffc6c64687edb615c3adc28
-      internalID: -1389990550625635539
+      spriteID: 82ca9b14241573b4b8e3b2d8ec914642
+      internalID: 8694964030843183629
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: run_cycle_3
+      name: run_cycle_v2_3
       rect:
         serializedVersion: 2
         x: 1407
         y: 1015
         width: 469
         height: 469
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 25c9e110f0f78904aa0da749ec5fba09
-      internalID: -1026630202277179033
+      spriteID: b887a9f1f3d9de745bc958c594758542
+      internalID: 692127700247052209
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: run_cycle_4
+      name: run_cycle_v2_4
       rect:
         serializedVersion: 2
         x: 0
         y: 546
         width: 469
         height: 469
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 833fdb90564e39e49bea6bec96752f02
-      internalID: 6235638111069562078
+      spriteID: 4c71cafab2de3f944ba94fbb49cb90b6
+      internalID: 7806038656265360880
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: run_cycle_5
+      name: run_cycle_v2_5
       rect:
         serializedVersion: 2
         x: 469
         y: 546
         width: 469
         height: 469
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5c6491b3e2c381d45a5db493b1f92d17
-      internalID: 5810789559147188179
+      spriteID: 3c29df94e74b45e42a4c701e95a970d9
+      internalID: 6149185514858871357
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: run_cycle_6
+      name: run_cycle_v2_6
       rect:
         serializedVersion: 2
         x: 938
         y: 546
         width: 469
         height: 469
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 872080a2032f5b445abba149b722055e
-      internalID: -1154805980479187755
+      spriteID: 7796ffbbb34af274595c95a5236eef73
+      internalID: -7846570681464047953
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: run_cycle_7
+      name: run_cycle_v2_7
       rect:
         serializedVersion: 2
         x: 1407
         y: 546
         width: 469
         height: 469
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f0c760c60c1c4614da26c8adbf18d7c5
-      internalID: 659527209669431860
+      spriteID: 057c39b9d94512545a9bd4f78ae60020
+      internalID: -1897913128915230070
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: run_cycle_8
+      name: run_cycle_v2_8
       rect:
         serializedVersion: 2
         x: 0
         y: 77
         width: 469
         height: 469
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 16adb46ca124d5a48b34a8ac841f0845
-      internalID: 3445524075170962677
+      spriteID: 74c3c9a8be620764a8c9764dc8b2b5e0
+      internalID: -3757999451305974937
       vertices: []
       indices: 
       edges: []
@@ -328,7 +316,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 12aecf84b4222db419523f65fe6dd62e
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
