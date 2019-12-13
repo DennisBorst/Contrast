@@ -24,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
 
     //GameObject stuff
     [Header("GameObject stuff")]
+    private Animator anim;
     private Rigidbody2D rb;
 
     //keyCodes
@@ -50,6 +51,7 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         beginGravity = rb.gravityScale;
         ConfigureControlButtons();
+        anim = GetComponent<Animator>();
 
         currentKnockbackHitTimer = knockbackHitTimer;
     }
@@ -85,10 +87,12 @@ public class PlayerMovement : MonoBehaviour
         currentMovementSpeed = Input.GetAxis("Horizontal") * movementSpeed * Time.deltaTime;
         if (input.x > 0.2f || input.x < -0.2f || input.y > 0.2f || input.y < -0.2f)
         {
+            anim.SetBool("isRunning", true);
             rb.velocity = new Vector2(currentMovementSpeed, rb.velocity.y);
         }
         else
         {
+            anim.SetBool("isRunning", false);
             rb.velocity = new Vector2(0, rb.velocity.y);
         }
     }
