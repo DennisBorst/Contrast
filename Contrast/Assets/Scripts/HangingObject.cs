@@ -16,7 +16,10 @@ public class HangingObject : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        rbBox.isKinematic = true;
+        if(collision.gameObject.layer == 8)
+        {
+            rbBox.isKinematic = true;
+        }
     }
 
     private void OnMouseOver()

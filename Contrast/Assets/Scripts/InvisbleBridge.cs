@@ -13,6 +13,7 @@ public class InvisbleBridge : MonoBehaviour
     {
         boxCollider = GetComponent<BoxCollider2D>();
         boxCollider.isTrigger = true;
+        this.gameObject.layer = 10;
 
         if (GetComponentInChildren<SpriteRenderer>())
         {
@@ -40,11 +41,13 @@ public class InvisbleBridge : MonoBehaviour
         {
             boxCollider.isTrigger = false;
             spriteRenderer.enabled = true;
+            this.gameObject.layer = 11;
         }
         else
         {
             spriteRenderer.enabled = false;
             boxCollider.isTrigger = true;
+            this.gameObject.layer = 10;
         }
     }
 }

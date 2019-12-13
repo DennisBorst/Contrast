@@ -60,7 +60,7 @@ public class Enemy : MonoBehaviour
     {
         switchedSide = true;
 
-        RaycastHit2D groundInfo = Physics2D.Raycast(groundDetection.position, Vector2.down, rayGroundDistance);
+        RaycastHit2D groundInfo = Physics2D.Raycast(groundDetection.position, Vector2.down, rayGroundDistance, groundLayer);
         onWall = Physics2D.OverlapCircle((Vector2)transform.position + rightOffset, collisionRadius, groundLayer)
             || Physics2D.OverlapCircle((Vector2)transform.position + leftOffset, collisionRadius, groundLayer);
 

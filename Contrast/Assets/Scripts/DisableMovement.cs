@@ -13,6 +13,9 @@ public class DisableMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        rb.isKinematic = true;
+        if (collision.gameObject.layer == 8)
+        {
+            rb.isKinematic = true;
+        }
     }
 }
