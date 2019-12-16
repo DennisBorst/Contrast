@@ -1134,6 +1134,21 @@ PrefabInstance:
       propertyPath: m_Constraints
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 3285697713352489599, guid: ab0517dff86f66849a6de7f542a9aa3c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.26
+      objectReference: {fileID: 0}
+    - target: {fileID: 3285697713352489599, guid: ab0517dff86f66849a6de7f542a9aa3c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.635
+      objectReference: {fileID: 0}
+    - target: {fileID: 3285697713352489599, guid: ab0517dff86f66849a6de7f542a9aa3c,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 5.5038958
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab0517dff86f66849a6de7f542a9aa3c, type: 3}
 --- !u!1 &1502013171 stripped

@@ -60,6 +60,14 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         Jumping();
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            anim.SetTrigger("isDying");
+            movementSpeed = 0;
+            currentMovementSpeed = 0;
+            this.enabled = false;
+        }
     }
 
     void FixedUpdate()
