@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Elevator : MonoBehaviour
 {
-    [SerializeField] private GameObject elevator;
+    [SerializeField] private Transform contraWeight;
 
     [SerializeField] private float upSpeed;
     [SerializeField] private float fallSpeed;
@@ -18,17 +18,18 @@ public class Elevator : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        minY = elevator.transform.position.y;
+        minY = this.transform.position.y;
     }
 
     private void Update()
     {
-        currentY = elevator.transform.position.y;
+        currentY = this.transform.position.y;
 
         if (isPressing && currentY <= maxY)
         {
             reachedTheTop = true;
-            elevator.transform.position = Vector3.Lerp(elevator.transform.position, new Vector3(elevator.transform.position.x, elevator.transform.position.y + (maxY - minY), elevator.transform.position.z), upSpeed);
+            this.transform.position = Vector3.Lerp(this.transform.position, new Vector3(this.transform.position.x, this.transform.position.y + (maxY - minY), this.transform.position.z), upSpeed);
+            contraWeight.transform.position = Vector3.Lerp(contraWeight.transform.position, new Vector3(contraWeight.transform.position.x, contraWeight.transform.position.y + ((maxY - minY) * -1), contraWeight.transform.position.z), upSpeed);
         }
 
         if (isPressing)
@@ -38,7 +39,8 @@ public class Elevator : MonoBehaviour
 
         if (currentY > minY)
         {
-            elevator.transform.position = new Vector3(elevator.transform.position.x, elevator.transform.position.y - fallSpeed, elevator.transform.position.z);
+            this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y - fallSpeed, this.transform.position.z);
+            contraWeight.transform.position = new Vector3(contraWeight.transform.position.x, contraWeight.transform.position.y - (fallSpeed * -1), contraWeight.transform.position.z);
         }
     }
 

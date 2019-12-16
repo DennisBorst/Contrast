@@ -426,7 +426,7 @@ PrefabInstance:
     - target: {fileID: 6185494073929060682, guid: f2ecc77fcee453549bda4e792fae0fcd,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -31.21
+      value: -30.26
       objectReference: {fileID: 0}
     - target: {fileID: 6185494073929060682, guid: f2ecc77fcee453549bda4e792fae0fcd,
         type: 3}
@@ -670,6 +670,11 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 141635413}
+    - target: {fileID: 2744119156926732232, guid: b62c3f99044e90c49811aadcb25c5450,
+        type: 3}
+      propertyPath: groundLayer.m_Bits
+      value: 2359
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b62c3f99044e90c49811aadcb25c5450, type: 3}
 --- !u!1 &583301439
@@ -1105,6 +1110,11 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 141635413}
+    - target: {fileID: 2744119156926732232, guid: b62c3f99044e90c49811aadcb25c5450,
+        type: 3}
+      propertyPath: groundLayer.m_Bits
+      value: 2359
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b62c3f99044e90c49811aadcb25c5450, type: 3}
 --- !u!1001 &1857178195
