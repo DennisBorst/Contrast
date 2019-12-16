@@ -20,7 +20,7 @@ AnimatorStateMachine:
     m_Position: {x: 30, y: -10, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 3101899927056941391}
-    m_Position: {x: 350, y: 200, z: 0}
+    m_Position: {x: 350, y: 190, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions:
   - {fileID: 107666054322139996}
@@ -28,7 +28,7 @@ AnimatorStateMachine:
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []
   m_AnyStatePosition: {x: 50, y: 70, z: 0}
-  m_EntryPosition: {x: 20, y: 130, z: 0}
+  m_EntryPosition: {x: 90, y: 190, z: 0}
   m_ExitPosition: {x: 800, y: 120, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
   m_DefaultState: {fileID: 3101899927056941391}
@@ -219,7 +219,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: player_respawn
-  m_Speed: 1
+  m_Speed: 0.3
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -66805911811412218}

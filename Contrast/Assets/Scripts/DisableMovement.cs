@@ -13,8 +13,9 @@ public class DisableMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.layer == 8)
+        if (collision.gameObject.layer == 12)
         {
+            rb.velocity = Vector3.zero;
             rb.isKinematic = true;
         }
     }

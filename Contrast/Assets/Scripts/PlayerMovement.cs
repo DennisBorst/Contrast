@@ -122,7 +122,10 @@ public class PlayerMovement : MonoBehaviour
     {
         if(collision.gameObject.tag == "DeathZone" || collision.gameObject.tag == "Enemy")
         {
-            Respawn();
+            anim.SetTrigger("isDying");
+            movementSpeed = 0;
+            currentMovementSpeed = 0;
+            this.enabled = false;
         }
     }
 
@@ -167,7 +170,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void Respawn()
+    public void Respawn()
     {
         GameManager.Instance.Reload();
         //UIManager.Instance.DecreaseHeart(playerID, gameLifes, Mathf.RoundToInt(damageTaken));
