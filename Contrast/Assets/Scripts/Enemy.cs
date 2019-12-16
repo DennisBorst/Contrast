@@ -10,7 +10,6 @@ public class Enemy : MonoBehaviour
     private bool movingRight = true;
 
     public Transform groundDetection;
-    public Transform wallDecection;
     public GameObject player;
     private Rigidbody2D rb;
 
