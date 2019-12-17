@@ -84,11 +84,6 @@ public class PlayerMovement : MonoBehaviour
         return timer;
     }
 
-    private void DamageDisplay()
-    {
-        //UIManager.Instance.DecreaseHeart(playerID, gameLifes, Mathf.RoundToInt(damageTaken));
-    }
-
     private void Moving()
     {
         currentMovementSpeed = Input.GetAxis("Horizontal") * movementSpeed * Time.deltaTime;
@@ -96,6 +91,8 @@ public class PlayerMovement : MonoBehaviour
         {
             anim.SetBool("isRunning", true);
             rb.velocity = new Vector2(currentMovementSpeed, rb.velocity.y);
+
+            AudioManager.Instance.PlaySound(AudioFragments.WalkPlayer, AudioPlayers.Player);
         }
         else
         {
@@ -109,6 +106,8 @@ public class PlayerMovement : MonoBehaviour
         
         if (Input.GetKeyDown(jumpCode) && grounded)
         {
+            AudioManager.Instance.PlaySound(AudioFragments.Jump, AudioPlayers.Player);
+
             Debug.Log("Jumping");
             isInAir = true;
             jumpCount++;
@@ -127,14 +126,29 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        jumpParticle.Play();
-
-        if (collision.gameObject.tag == "DeathZone" || collision.gameObject.tag == "Enemy")
+        if (collision.gameObject.tag == "DeathZone")
         {
-            anim.SetTrigger("isDying");
             movementSpeed = 0;
             currentMovementSpeed = 0;
             this.enabled = false;
+
+            AudioManager.Instance.PlaySound(AudioFragments.DeathPlayer, AudioPlayers.Player);
+            anim.SetTrigger("isDying");
+        }
+        else if (collision.gameObject.tag == "Enemy")
+        {
+            movementSpeed = 0;
+            currentMovementSpeed = 0;
+            this.enabled = false;
+
+            AudioManager.Instance.PlaySound(AudioFragments.Hit, AudioPlayers.Player);
+            anim.SetTrigger("isDying");
+        }
+
+        if (collision.gameObject.tag == "Ground")
+        {
+            jumpParticle.Play();
+            AudioManager.Instance.PlaySound(AudioFragments.TouchDown, AudioPlayers.Player);
         }
     }
 

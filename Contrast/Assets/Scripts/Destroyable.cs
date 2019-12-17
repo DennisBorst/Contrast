@@ -35,6 +35,7 @@ public class Destroyable : MonoBehaviour
 
     public void Destroy()
     {
+        AudioManager.Instance.PlaySound(AudioFragments.DeathEnemy, AudioPlayers.Enemy);
         Destroy(this.gameObject);
     }
 }

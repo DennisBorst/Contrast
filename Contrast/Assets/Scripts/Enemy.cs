@@ -38,6 +38,7 @@ public class Enemy : MonoBehaviour
 
     private void Patrol()
     {
+        AudioManager.Instance.PlaySound(AudioFragments.WalkEnemy, AudioPlayers.Enemy);
         transform.Translate(Vector2.right * speed * Time.deltaTime);
 
         if (switchedSide)
