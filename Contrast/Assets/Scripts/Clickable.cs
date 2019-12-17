@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class Clickable : MonoBehaviour
 {
@@ -28,5 +29,10 @@ public class Clickable : MonoBehaviour
     public void Destroy()
     {
         Destroy(this.gameObject);
+    }
+
+    public void CameraShake()
+    {
+        Camera.main.transform.DOShakePosition(.4f, .5f, 20, 90, false, true);
     }
 }

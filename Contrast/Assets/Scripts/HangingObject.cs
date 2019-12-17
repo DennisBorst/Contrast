@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class HangingObject : MonoBehaviour
 {
@@ -29,6 +30,7 @@ public class HangingObject : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             rbBox.isKinematic = false;
+            Camera.main.transform.DOShakePosition(.3f, .1f, 20, 90, false, true);
             Destroy(redRope.gameObject);
         }
     }

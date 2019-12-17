@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class DisableMovement : MonoBehaviour
 {
@@ -19,6 +20,7 @@ public class DisableMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        Camera.main.transform.DOShakePosition(.4f, .5f, 20, 90, false, true);
         if (blueOutline != null)
         {
             blueOutline.enabled = true;

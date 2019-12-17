@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -132,6 +133,7 @@ public class PlayerMovement : MonoBehaviour
             currentMovementSpeed = 0;
             this.enabled = false;
 
+            Camera.main.transform.DOShakePosition(.3f, .3f, 20, 90, false, true);
             AudioManager.Instance.PlaySound(AudioFragments.DeathPlayer, AudioPlayers.Player);
             anim.SetTrigger("isDying");
         }
@@ -141,6 +143,7 @@ public class PlayerMovement : MonoBehaviour
             currentMovementSpeed = 0;
             this.enabled = false;
 
+            Camera.main.transform.DOShakePosition(.3f, .2f, 20, 90, false, true);
             AudioManager.Instance.PlaySound(AudioFragments.Hit, AudioPlayers.Player);
             anim.SetTrigger("isDying");
         }

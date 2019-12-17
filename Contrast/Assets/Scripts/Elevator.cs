@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class Elevator : MonoBehaviour
 {
@@ -28,6 +29,7 @@ public class Elevator : MonoBehaviour
         if (isPressing && currentY <= maxY)
         {
             reachedTheTop = true;
+            Camera.main.transform.DOShakePosition(0.05f, 0.1f, 20, 90, false, true);
             this.transform.position = Vector3.Lerp(this.transform.position, new Vector3(this.transform.position.x, this.transform.position.y + (maxY - minY), this.transform.position.z), upSpeed);
             contraWeight.transform.position = Vector3.Lerp(contraWeight.transform.position, new Vector3(contraWeight.transform.position.x, contraWeight.transform.position.y + ((maxY - minY) * -1), contraWeight.transform.position.z), upSpeed);
         }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class Destroyable : MonoBehaviour
 {
@@ -35,6 +36,7 @@ public class Destroyable : MonoBehaviour
 
     public void Destroy()
     {
+        Camera.main.transform.DOShakePosition(.3f, .2f, 20, 90, false, true);
         AudioManager.Instance.PlaySound(AudioFragments.DeathEnemy, AudioPlayers.Enemy);
         Destroy(this.gameObject);
     }
