@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4712747828236896533}
   - component: {fileID: 6402288745509209144}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sprite bridgetree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,9 +92,9 @@ GameObject:
   - component: {fileID: 5033469572172623945}
   - component: {fileID: 5033469572172623943}
   - component: {fileID: 5033469572172623942}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bridge
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

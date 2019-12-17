@@ -6,6 +6,8 @@ public class PlayerMovement : MonoBehaviour
 {
     private int playerID = 0;
 
+    [SerializeField] private bool startAnimation = false;
+
     [Header("General stats")]
     [SerializeField] private int gameLifes;
     [SerializeField] private int amountOfJumps = 2;
@@ -17,13 +19,12 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float slideSpeed;
 
     //under the hood stats
-    private float currentMovementSpeed;
     [SerializeField] private bool grounded;
     private bool isInAir = false;
+    private float currentMovementSpeed;
     private float beginGravity;
 
     //GameObject stuff
-    [Header("GameObject stuff")]
     private Animator anim;
     private Rigidbody2D rb;
 
@@ -36,15 +37,8 @@ public class PlayerMovement : MonoBehaviour
     //other
     public Vector2 input;
 
-    //Hit related (probably not necessary)
-    private PlayerMovement characterThatHitYou;
-    public float damageTaken;
-    [SerializeField] private bool knockbackHit;
-    [SerializeField] private float knockbackHitTimer;
-    [SerializeField] private float damageTimeMultiplayer;
-    private float currentKnockbackHitTimer;
-    [SerializeField] private float damageMultiplier;
-
+    //Particles
+    [SerializeField] private ParticleSystem jumpParticle;
 
     private void Awake()
     {
@@ -53,7 +47,12 @@ public class PlayerMovement : MonoBehaviour
         ConfigureControlButtons();
         anim = GetComponent<Animator>();
 
-        currentKnockbackHitTimer = knockbackHitTimer;
+        Vector3 characterScale = transform.localScale;
+        if (startAnimation)
+        {
+            characterScale.x = -1;
+        }
+        transform.localScale = characterScale;
     }
 
     // Update is called once per frame
@@ -128,7 +127,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "DeathZone" || collision.gameObject.tag == "Enemy")
+        jumpParticle.Play();
+
+        if (collision.gameObject.tag == "DeathZone" || collision.gameObject.tag == "Enemy")
         {
             anim.SetTrigger("isDying");
             movementSpeed = 0;
@@ -157,24 +158,6 @@ public class PlayerMovement : MonoBehaviour
         {
             isInAir = true;
             jumpCount++;
-        }
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.GetComponent<Hitbox>())
-        {
-            Debug.Log("enemy hit here on this spot");
-            if (collision.gameObject.GetComponent<Hitbox>().Character)
-            {
-                Debug.Log("enemy hit here");
-                //if it doesnt come from the player itself
-                if (collision.gameObject.GetComponent<Hitbox>().Character != this)
-                {
-                    //take damage
-                    Debug.Log("enemy hit");
-                }
-            }
         }
     }
 

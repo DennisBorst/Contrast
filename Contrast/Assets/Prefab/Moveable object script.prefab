@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 467993337178707993}
   - component: {fileID: 8130157550399488812}
   - component: {fileID: 8434013746680187302}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sprite elevator (1)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -226,9 +226,9 @@ GameObject:
   - component: {fileID: 5757074968132273811}
   - component: {fileID: 5757074968132273810}
   - component: {fileID: 5757074968132273808}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Moveable object script
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
