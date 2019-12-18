@@ -51,19 +51,19 @@ MonoBehaviour:
   - {fileID: 4771759380835978927}
   - {fileID: 6249233300101669647}
   audioClips:
-  - clip: {fileID: 0}
+  - clip: {fileID: 8300000, guid: d5d067accd837ae4980a6b08a69bbc44, type: 3}
     fragment: 0
-  - clip: {fileID: 0}
+  - clip: {fileID: 8300000, guid: 71e98a8757331e44d94575d6f4eb4bb3, type: 3}
     fragment: 1
-  - clip: {fileID: 0}
+  - clip: {fileID: 8300000, guid: ed0f6a772f049a14cae1708cc1ce9cf2, type: 3}
     fragment: 2
   - clip: {fileID: 0}
-    fragment: 0
-  - clip: {fileID: 0}
+    fragment: 15
+  - clip: {fileID: 8300000, guid: 6688f8585ffbbac489f55f068681f0f1, type: 3}
     fragment: 3
   - clip: {fileID: 0}
-    fragment: 4
-  - clip: {fileID: 0}
+    fragment: 14
+  - clip: {fileID: 8300000, guid: 263b2b1c6f7288e4ab8c9f310d6f604f, type: 3}
     fragment: 5
   - clip: {fileID: 0}
     fragment: 6
@@ -81,10 +81,6 @@ MonoBehaviour:
     fragment: 12
   - clip: {fileID: 0}
     fragment: 13
-  - clip: {fileID: 0}
-    fragment: 14
-  - clip: {fileID: 0}
-    fragment: 15
 --- !u!1 &956425166642515886
 GameObject:
   m_ObjectHideFlags: 0
