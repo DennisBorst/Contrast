@@ -8,8 +8,8 @@ public class VideoTest : MonoBehaviour
 {
     [SerializeField] private VideoClip videoClip;
     [SerializeField] private Animator anim;
-
     [SerializeField] private int menuScene;
+    [SerializeField] GameObject ambientAudio;
 
     // Start is called before the first frame update
     private void Start()
@@ -22,6 +22,7 @@ public class VideoTest : MonoBehaviour
     {
         yield return new WaitForSeconds((float)videoClip.length);
 
+        ambientAudio.SetActive(true);
         gameObject.SetActive(false);
         anim.enabled = true;
 

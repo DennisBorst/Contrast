@@ -2567,7 +2567,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   videoClip: {fileID: 32900000, guid: 19e40f9c6d36b0149913e4920140953d, type: 3}
   anim: {fileID: 519420033}
-  levelAudio: {fileID: 363571007}
+  menuScene: 0
+  ambientAudio: {fileID: 363571007}
 --- !u!1 &688807490
 GameObject:
   m_ObjectHideFlags: 0
