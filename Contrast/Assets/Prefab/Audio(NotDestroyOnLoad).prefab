@@ -41,11 +41,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: c8c6d8d853c091c45af6f6e05845833e, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -301,8 +301,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundTrack: {fileID: 7301621878336715342}
   ambience: {fileID: 6939445213814382031}
-  ambienceOne: {fileID: 0}
-  ambienceTwo: {fileID: 0}
-  ambienceThree: {fileID: 0}
+  ambienceOne: {fileID: 8300000, guid: d5e77290c916ecc4b99782e357e9b1a5, type: 3}
+  ambienceTwo: {fileID: 8300000, guid: 4ac0d6cf6af75b545b61e2cfbc367314, type: 3}
+  ambienceThree: {fileID: 8300000, guid: d5e77290c916ecc4b99782e357e9b1a5, type: 3}
   ambienceTwoScene: 5
   ambienceThreeScene: 9
