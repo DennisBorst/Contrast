@@ -980,11 +980,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.4098259
       objectReference: {fileID: 0}
-    - target: {fileID: 2744119156926732279, guid: b62c3f99044e90c49811aadcb25c5450,
-        type: 3}
-      propertyPath: m_Constraints
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2744119156926732232, guid: b62c3f99044e90c49811aadcb25c5450,
         type: 3}
       propertyPath: rightOffset.x
@@ -1010,6 +1005,17 @@ PrefabInstance:
       propertyPath: groundLayer.m_Bits
       value: 2359
       objectReference: {fileID: 0}
+    - target: {fileID: 2744119156926732279, guid: b62c3f99044e90c49811aadcb25c5450,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2744119156926732233, guid: b62c3f99044e90c49811aadcb25c5450,
+        type: 3}
+      propertyPath: dieParticle
+      value: 
+      objectReference: {fileID: 1676736303963736970, guid: 67d4fe6d2a484a14ebf17be8098793ee,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b62c3f99044e90c49811aadcb25c5450, type: 3}
 --- !u!1 &583301439
@@ -1381,11 +1387,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.4098259
       objectReference: {fileID: 0}
-    - target: {fileID: 2744119156926732279, guid: b62c3f99044e90c49811aadcb25c5450,
-        type: 3}
-      propertyPath: m_Constraints
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2744119156926732232, guid: b62c3f99044e90c49811aadcb25c5450,
         type: 3}
       propertyPath: rightOffset.x
@@ -1410,6 +1411,11 @@ PrefabInstance:
         type: 3}
       propertyPath: groundLayer.m_Bits
       value: 2359
+      objectReference: {fileID: 0}
+    - target: {fileID: 2744119156926732279, guid: b62c3f99044e90c49811aadcb25c5450,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b62c3f99044e90c49811aadcb25c5450, type: 3}
@@ -1558,7 +1564,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1225f29e5c4cf37429a5661e1d4acbf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpToScene: 4
+  jumpToScene: 5
 --- !u!1 &1251841476
 GameObject:
   m_ObjectHideFlags: 0

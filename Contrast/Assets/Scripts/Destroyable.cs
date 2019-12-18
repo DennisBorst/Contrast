@@ -7,6 +7,7 @@ public class Destroyable : MonoBehaviour
 {
     [SerializeField] private bool interactable = true;
     [SerializeField] private bool enemy = true;
+    [SerializeField] private GameObject dieParticle;
     private Animator anim;
 
     private void Awake()
@@ -38,6 +39,7 @@ public class Destroyable : MonoBehaviour
     {
         Camera.main.transform.DOShakePosition(.3f, .2f, 20, 90, false, true);
         AudioManager.Instance.PlaySound(AudioFragments.DeathEnemy, AudioPlayers.Enemy);
+        Instantiate(dieParticle, transform.position, Quaternion.Euler(90, 0, 0));
         Destroy(this.gameObject);
     }
 }

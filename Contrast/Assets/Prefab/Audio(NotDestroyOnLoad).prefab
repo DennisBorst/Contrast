@@ -304,5 +304,5 @@ MonoBehaviour:
   ambienceOne: {fileID: 0}
   ambienceTwo: {fileID: 0}
   ambienceThree: {fileID: 0}
-  ambienceTwoScene: 4
-  ambienceThreeScene: 8
+  ambienceTwoScene: 5
+  ambienceThreeScene: 9

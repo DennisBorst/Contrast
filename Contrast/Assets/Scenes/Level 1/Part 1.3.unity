@@ -969,7 +969,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1225f29e5c4cf37429a5661e1d4acbf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpToScene: 0
+  jumpToScene: 1
 --- !u!1001 &1506583793
 PrefabInstance:
   m_ObjectHideFlags: 0

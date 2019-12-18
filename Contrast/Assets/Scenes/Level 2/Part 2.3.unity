@@ -756,7 +756,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1225f29e5c4cf37429a5661e1d4acbf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpToScene: 4
+  jumpToScene: 5
 --- !u!1 &1488351439
 GameObject:
   m_ObjectHideFlags: 0
