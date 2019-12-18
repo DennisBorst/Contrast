@@ -65,13 +65,13 @@ MonoBehaviour:
     fragment: 14
   - clip: {fileID: 8300000, guid: 263b2b1c6f7288e4ab8c9f310d6f604f, type: 3}
     fragment: 5
-  - clip: {fileID: 0}
+  - clip: {fileID: 8300000, guid: 87d8ba3e611c3e34ca743869c70d0c49, type: 3}
     fragment: 6
-  - clip: {fileID: 0}
+  - clip: {fileID: 8300000, guid: cfd192133a363e3428d1e4f26588f3e6, type: 3}
     fragment: 7
   - clip: {fileID: 0}
     fragment: 8
-  - clip: {fileID: 0}
+  - clip: {fileID: 8300000, guid: d5b2e84eac84f914894f59fa709801b2, type: 3}
     fragment: 9
   - clip: {fileID: 0}
     fragment: 10
