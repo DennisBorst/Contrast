@@ -12,7 +12,7 @@ public class Destroyable : MonoBehaviour
 
     private void Awake()
     {
-        anim = GetComponent<Animator>();
+        anim = GetComponentInChildren<Animator>();
         anim.enabled = false;
     }
 
@@ -26,7 +26,8 @@ public class Destroyable : MonoBehaviour
             if (enemy)
             {
                 interactable = false;
-                anim.enabled = true;
+                //.enabled = true;
+                anim.SetTrigger("death");
             }
             else
             {

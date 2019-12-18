@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Video;
+using UnityEngine.SceneManagement;
 
 public class VideoTest : MonoBehaviour
 {
     [SerializeField] private VideoClip videoClip;
     [SerializeField] private Animator anim;
-    [SerializeField] private GameObject levelAudio;
+
+    [SerializeField] private int menuScene;
 
     // Start is called before the first frame update
     private void Start()
@@ -19,18 +21,15 @@ public class VideoTest : MonoBehaviour
     IEnumerator WaitForEndOfClip()
     {
         yield return new WaitForSeconds((float)videoClip.length);
-        Debug.Log("End of clip");
-        for(int i = 0; i<96; i++)
-        {
-            GetComponent<VideoPlayer>().targetCameraAlpha -= 0.01f;
-            Debug.Log("Alpha" + i);
-            yield return new WaitForSeconds(.01f);
-        }
-        Debug.Log("Test");
+
         gameObject.SetActive(false);
-        levelAudio.SetActive(true);
         anim.enabled = true;
 
         yield return null;
+    }
+
+    public void GoToMenu()
+    {
+        SceneManager.LoadScene(menuScene);
     }
 }
