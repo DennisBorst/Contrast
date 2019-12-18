@@ -97,6 +97,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactable: 1
+  enemy: 1
+  dieParticle: {fileID: 1676736303963736970, guid: 67d4fe6d2a484a14ebf17be8098793ee,
+    type: 3}
 --- !u!114 &2744119156926732232
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -111,7 +114,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   groundDetection: {fileID: 2744119158024828838}
-  wallDecection: {fileID: 0}
   player: {fileID: 0}
   groundLayer:
     serializedVersion: 2
