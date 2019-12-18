@@ -13,7 +13,6 @@ public class Destroyable : MonoBehaviour
     private void Awake()
     {
         anim = GetComponentInChildren<Animator>();
-        anim.enabled = false;
     }
 
     void OnMouseOver()
@@ -27,7 +26,7 @@ public class Destroyable : MonoBehaviour
             {
                 interactable = false;
                 //.enabled = true;
-                anim.SetTrigger("death");
+                anim.SetTrigger("isDying");
             }
             else
             {
