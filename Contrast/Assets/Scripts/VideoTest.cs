@@ -9,6 +9,7 @@ public class VideoTest : MonoBehaviour
     [SerializeField] private VideoClip videoClip;
     [SerializeField] private Animator anim;
     [SerializeField] private int menuScene;
+    [SerializeField] private bool intro;
     [SerializeField] GameObject ambientAudio;
 
     // Start is called before the first frame update
@@ -16,13 +17,21 @@ public class VideoTest : MonoBehaviour
     {
         StartCoroutine(WaitForEndOfClip());
         anim.enabled = false;
+
+        if (intro)
+        {
+            ambientAudio.SetActive(false);
+        }
     }
 
     IEnumerator WaitForEndOfClip()
     {
         yield return new WaitForSeconds((float)videoClip.length);
 
-        ambientAudio.SetActive(true);
+        if (intro)
+        {
+            ambientAudio.SetActive(true);
+        }
         gameObject.SetActive(false);
         anim.enabled = true;
 

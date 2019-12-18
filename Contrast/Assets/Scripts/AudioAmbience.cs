@@ -16,6 +16,10 @@ public class AudioAmbience : MonoBehaviour
     [Space]
     [SerializeField] private int ambienceTwoScene;
     [SerializeField] private int ambienceThreeScene;
+    [SerializeField] private int endScene;
+
+    private bool reachedLevelTwo = false;
+    private bool reachedLevelThree = false;
 
     void Start()
     {
@@ -28,15 +32,22 @@ public class AudioAmbience : MonoBehaviour
 
     void Update()
     {
-        if(SceneManager.GetActiveScene().buildIndex == ambienceTwoScene)
+        if(SceneManager.GetActiveScene().buildIndex == ambienceTwoScene && !reachedLevelTwo)
         {
+            reachedLevelTwo = true;
             ambience.clip = ambienceTwo;
             ambience.Play();
         }
-        else if (SceneManager.GetActiveScene().buildIndex == ambienceThreeScene)
+        else if (SceneManager.GetActiveScene().buildIndex == ambienceThreeScene && !reachedLevelThree)
         {
+            reachedLevelThree = true;
             ambience.clip = ambienceThree;
             ambience.Play();
+        }
+
+        if(SceneManager.GetActiveScene().buildIndex == endScene)
+        {
+            Destroy(this.gameObject);
         }
     }
 }
