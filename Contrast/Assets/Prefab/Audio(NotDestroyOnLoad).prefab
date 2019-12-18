@@ -270,7 +270,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2520400493454840536
 Transform:
   m_ObjectHideFlags: 0
@@ -303,6 +303,6 @@ MonoBehaviour:
   ambience: {fileID: 6939445213814382031}
   ambienceOne: {fileID: 8300000, guid: d5e77290c916ecc4b99782e357e9b1a5, type: 3}
   ambienceTwo: {fileID: 8300000, guid: 4ac0d6cf6af75b545b61e2cfbc367314, type: 3}
-  ambienceThree: {fileID: 8300000, guid: d5e77290c916ecc4b99782e357e9b1a5, type: 3}
+  ambienceThree: {fileID: 8300000, guid: f6f243164a3f69542ac9e2ba315984df, type: 3}
   ambienceTwoScene: 5
   ambienceThreeScene: 9
