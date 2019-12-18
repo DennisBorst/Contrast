@@ -144,7 +144,7 @@ public class PlayerMovement : MonoBehaviour
             this.enabled = false;
 
             Camera.main.transform.DOShakePosition(.3f, .2f, 20, 90, false, true);
-            AudioManager.Instance.PlaySound(AudioFragments.Hit, AudioPlayers.Player);
+            AudioManager.Instance.PlaySound(AudioFragments.DeathPlayer, AudioPlayers.Player);
             anim.SetTrigger("isDying");
         }
 

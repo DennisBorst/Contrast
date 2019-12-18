@@ -2568,7 +2568,6 @@ MonoBehaviour:
   videoClip: {fileID: 32900000, guid: 19e40f9c6d36b0149913e4920140953d, type: 3}
   anim: {fileID: 519420033}
   levelAudio: {fileID: 363571007}
-  longClip: {fileID: 0}
 --- !u!1 &688807490
 GameObject:
   m_ObjectHideFlags: 0
@@ -5343,12 +5342,22 @@ PrefabInstance:
     - target: {fileID: 308998777865341083, guid: 05503fa53c3fc6a4e8861d40fbed243d,
         type: 3}
       propertyPath: audioClips.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 308998777865341083, guid: 05503fa53c3fc6a4e8861d40fbed243d,
         type: 3}
       propertyPath: audioClips.Array.data[0].clip
       value: 
       objectReference: {fileID: 8300000, guid: d5d067accd837ae4980a6b08a69bbc44, type: 3}
+    - target: {fileID: 308998777865341083, guid: 05503fa53c3fc6a4e8861d40fbed243d,
+        type: 3}
+      propertyPath: audioClips.Array.data[1].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 70cf82c19aa205c4db6ac8a1fb6ffb04, type: 3}
+    - target: {fileID: 308998777865341083, guid: 05503fa53c3fc6a4e8861d40fbed243d,
+        type: 3}
+      propertyPath: audioClips.Array.data[1].fragment
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 05503fa53c3fc6a4e8861d40fbed243d, type: 3}
