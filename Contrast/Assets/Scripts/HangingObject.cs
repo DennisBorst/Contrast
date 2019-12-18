@@ -30,6 +30,7 @@ public class HangingObject : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             rbBox.isKinematic = false;
+            AudioManager.Instance.PlaySound(AudioFragments.CutRope, AudioPlayers.Interactable);
             Camera.main.transform.DOShakePosition(.3f, .1f, 20, 90, false, true);
             Destroy(redRope.gameObject);
         }

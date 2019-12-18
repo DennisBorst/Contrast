@@ -28,6 +28,7 @@ public class PlayerMovement : MonoBehaviour
     //GameObject stuff
     private Animator anim;
     private Rigidbody2D rb;
+    private AudioSource source;
 
     //keyCodes
     [HideInInspector] public KeyCode baseAttackCode;
@@ -47,6 +48,7 @@ public class PlayerMovement : MonoBehaviour
         beginGravity = rb.gravityScale;
         ConfigureControlButtons();
         anim = GetComponent<Animator>();
+        source = GetComponent<AudioSource>();
 
         Vector3 characterScale = transform.localScale;
         if (startAnimation)
@@ -93,13 +95,17 @@ public class PlayerMovement : MonoBehaviour
             anim.SetBool("isRunning", true);
             rb.velocity = new Vector2(currentMovementSpeed, rb.velocity.y);
 
-            AudioManager.Instance.PlaySound(AudioFragments.WalkPlayer, AudioPlayers.Player);
+            if(!source.isPlaying && !isInAir)
+            {
+                source.Play();
+            }
         }
         else
         {
             anim.SetBool("isRunning", false);
             rb.velocity = new Vector2(0, rb.velocity.y);
         }
+
     }
 
     private void Jumping()

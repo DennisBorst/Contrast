@@ -21,6 +21,8 @@ public class DisableMovement : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Camera.main.transform.DOShakePosition(.4f, .5f, 20, 90, false, true);
+        AudioManager.Instance.PlaySound(AudioFragments.BoulderCrashing, AudioPlayers.Interactable);
+
         if (blueOutline != null)
         {
             blueOutline.enabled = true;

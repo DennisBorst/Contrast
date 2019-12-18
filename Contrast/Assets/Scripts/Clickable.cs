@@ -33,6 +33,7 @@ public class Clickable : MonoBehaviour
 
     public void CameraShake()
     {
+        AudioManager.Instance.PlaySound(AudioFragments.TreeFalling, AudioPlayers.Interactable);
         Camera.main.transform.DOShakePosition(.4f, .5f, 20, 90, false, true);
     }
 }

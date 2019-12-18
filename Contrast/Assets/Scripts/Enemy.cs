@@ -23,8 +23,11 @@ public class Enemy : MonoBehaviour
     private float switchTimer;
     private float currentSwitchTimer;
 
+    private AudioSource source;
+
     private void Start()
     {
+        source = GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody2D>();
         currentSwitchTimer = switchTimer;
     }
@@ -38,8 +41,12 @@ public class Enemy : MonoBehaviour
 
     private void Patrol()
     {
-        AudioManager.Instance.PlaySound(AudioFragments.WalkEnemy, AudioPlayers.Enemy);
         transform.Translate(Vector2.right * speed * Time.deltaTime);
+
+        if (!source.isPlaying)
+        {
+            source.Play();
+        }
 
         if (switchedSide)
         {
