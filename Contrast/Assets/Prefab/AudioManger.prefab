@@ -51,19 +51,19 @@ MonoBehaviour:
   - {fileID: 4771759380835978927}
   - {fileID: 6249233300101669647}
   audioClips:
-  - clip: {fileID: 8300000, guid: d5d067accd837ae4980a6b08a69bbc44, type: 3}
+  - clip: {fileID: 8300000, guid: 009c162276732c641b5d68537ea87380, type: 3}
     fragment: 0
   - clip: {fileID: 8300000, guid: 71e98a8757331e44d94575d6f4eb4bb3, type: 3}
     fragment: 1
   - clip: {fileID: 8300000, guid: ed0f6a772f049a14cae1708cc1ce9cf2, type: 3}
     fragment: 2
-  - clip: {fileID: 0}
+  - clip: {fileID: 8300000, guid: 7ed5589ace9112c4890f8904f51d3001, type: 3}
     fragment: 15
   - clip: {fileID: 8300000, guid: 6688f8585ffbbac489f55f068681f0f1, type: 3}
     fragment: 3
-  - clip: {fileID: 0}
+  - clip: {fileID: 8300000, guid: c32ca6a5370178d4c845320ddcee03d9, type: 3}
     fragment: 14
-  - clip: {fileID: 8300000, guid: 263b2b1c6f7288e4ab8c9f310d6f604f, type: 3}
+  - clip: {fileID: 8300000, guid: a65a53994e198c0429abbb5e0a831057, type: 3}
     fragment: 5
   - clip: {fileID: 8300000, guid: 87d8ba3e611c3e34ca743869c70d0c49, type: 3}
     fragment: 6
@@ -79,7 +79,7 @@ MonoBehaviour:
     fragment: 11
   - clip: {fileID: 0}
     fragment: 12
-  - clip: {fileID: 0}
+  - clip: {fileID: 8300000, guid: 3ee48694f1d50c24e9fe78926f5a1265, type: 3}
     fragment: 13
 --- !u!1 &956425166642515886
 GameObject:

@@ -301,8 +301,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundTrack: {fileID: 7301621878336715342}
   ambience: {fileID: 6939445213814382031}
-  ambienceOne: {fileID: 8300000, guid: d5e77290c916ecc4b99782e357e9b1a5, type: 3}
-  ambienceTwo: {fileID: 8300000, guid: 4ac0d6cf6af75b545b61e2cfbc367314, type: 3}
-  ambienceThree: {fileID: 8300000, guid: f6f243164a3f69542ac9e2ba315984df, type: 3}
+  ambienceOne: {fileID: 8300000, guid: 560f684b577a6fb44be5767990d44ef6, type: 3}
+  ambienceTwo: {fileID: 8300000, guid: a20924b89ffd1f445b9ec5fc07fa21e6, type: 3}
+  ambienceThree: {fileID: 8300000, guid: 4a6803a1010c4d84292b0525a241a02b, type: 3}
   ambienceTwoScene: 5
   ambienceThreeScene: 9
+  endScene: 0

@@ -778,6 +778,11 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: -0.2
       objectReference: {fileID: 0}
+    - target: {fileID: 5364003348958364968, guid: f2ecc77fcee453549bda4e792fae0fcd,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 009c162276732c641b5d68537ea87380, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2ecc77fcee453549bda4e792fae0fcd, type: 3}
 --- !u!1 &445526334
