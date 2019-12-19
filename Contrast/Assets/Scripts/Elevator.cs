@@ -16,6 +16,8 @@ public class Elevator : MonoBehaviour
     [SerializeField] private bool isPressing = false;
     private bool reachedTheTop = false;
 
+    private AudioSource source;
+
     // Start is called before the first frame update
     private void Start()
     {
@@ -26,9 +28,18 @@ public class Elevator : MonoBehaviour
     {
         currentY = this.transform.position.y;
 
+        
         if (isPressing && currentY <= maxY)
         {
             reachedTheTop = true;
+
+            /*
+            if (!source.isPlaying)
+            {
+                source.Play();
+            }
+            */
+
             Camera.main.transform.DOShakePosition(0.05f, 0.1f, 20, 90, false, true);
             this.transform.position = Vector3.Lerp(this.transform.position, new Vector3(this.transform.position.x, this.transform.position.y + (maxY - minY), this.transform.position.z), upSpeed);
             contraWeight.transform.position = Vector3.Lerp(contraWeight.transform.position, new Vector3(contraWeight.transform.position.x, contraWeight.transform.position.y + ((maxY - minY) * -1), contraWeight.transform.position.z), upSpeed);
@@ -41,6 +52,13 @@ public class Elevator : MonoBehaviour
 
         if (currentY > minY)
         {
+            /*
+            if (!source.isPlaying)
+            {
+                source.Play();
+            }
+            */
+
             this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y - fallSpeed, this.transform.position.z);
             contraWeight.transform.position = new Vector3(contraWeight.transform.position.x, contraWeight.transform.position.y - (fallSpeed * -1), contraWeight.transform.position.z);
         }
