@@ -137,7 +137,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8733302
 Transform:
   m_ObjectHideFlags: 0
@@ -691,7 +691,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &87005352
 Transform:
   m_ObjectHideFlags: 0
@@ -4250,6 +4250,7 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
+  - component: {fileID: 519420030}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -4265,6 +4266,20 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
+--- !u!114 &519420030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45099d624c1e6c14e9514f4e5ea1ed9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sourceTexture: {fileID: 0}
+  _alphaSupport: 0
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -4499,7 +4514,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &554752375
 Transform:
   m_ObjectHideFlags: 0
@@ -6343,7 +6358,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &715011422
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6653,7 +6668,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &743346128
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6666,6 +6681,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a9c1f164de2d5440895fe839d8af6f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startAnimation: 0
   gameLifes: 1000
   amountOfJumps: 3
   jumpCount: 0
@@ -6677,11 +6693,7 @@ MonoBehaviour:
   baseAttackCode: 0
   specialAttackCode: 0
   input: {x: 0, y: 0}
-  damageTaken: 0
-  knockbackHit: 0
-  knockbackHitTimer: 0.1
-  damageTimeMultiplayer: 0.05
-  damageMultiplier: 20
+  jumpParticle: {fileID: 0}
 --- !u!50 &743346129
 Rigidbody2D:
   serializedVersion: 4
@@ -7140,7 +7152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5508361d8a8d46649b81fa88ebd8de12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  elevator: {fileID: 1920906570}
+  contraWeight: {fileID: 0}
   upSpeed: 0.003
   fallSpeed: 0.05
   maxY: 10
@@ -8665,7 +8677,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &958584905
 Transform:
   m_ObjectHideFlags: 0
@@ -9956,7 +9968,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1137782119
 Transform:
   m_ObjectHideFlags: 0
@@ -10728,7 +10740,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1271294717
 Transform:
   m_ObjectHideFlags: 0
@@ -11694,7 +11706,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1383163583
 Transform:
   m_ObjectHideFlags: 0
@@ -15075,7 +15087,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1788445942
 Transform:
   m_ObjectHideFlags: 0
@@ -16306,7 +16318,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1923126936
 Transform:
   m_ObjectHideFlags: 0
@@ -16664,7 +16676,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1953260323
 Transform:
   m_ObjectHideFlags: 0
