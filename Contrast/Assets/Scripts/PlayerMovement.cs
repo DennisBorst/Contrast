@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using DG.Tweening;
 
 public class PlayerMovement : MonoBehaviour
 {
     private int playerID = 0;
+
+    [SerializeField] private bool startAnimation = false;
 
     [Header("General stats")]
     [SerializeField] private int gameLifes;
@@ -18,17 +20,15 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float slideSpeed;
 
     //under the hood stats
-    private float currentMovementSpeed;
     [SerializeField] private bool grounded;
     private bool isInAir = false;
+    private float currentMovementSpeed;
     private float beginGravity;
 
     //GameObject stuff
-    [Header("GameObject stuff")]
+    private Animator anim;
     private Rigidbody2D rb;
-    private BoxCollider2D collider;
-    private float hitDirectionX;
-    private float hitDirectionY;
+    private AudioSource source;
 
     //keyCodes
     [HideInInspector] public KeyCode baseAttackCode;
@@ -37,33 +37,39 @@ public class PlayerMovement : MonoBehaviour
     private KeyCode startButton;
 
     //other
-    private int wallDirX;
     public Vector2 input;
 
-    //Hit related (probably not necessary)
-    private PlayerMovement characterThatHitYou;
-    public float damageTaken;
-    [SerializeField] private bool knockbackHit;
-    [SerializeField] private float knockbackHitTimer;
-    [SerializeField] private float damageTimeMultiplayer;
-    private float currentKnockbackHitTimer;
-    [SerializeField] private float damageMultiplier;
-
+    //Particles
+    [SerializeField] private ParticleSystem jumpParticle;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        collider = GetComponent<BoxCollider2D>();
         beginGravity = rb.gravityScale;
         ConfigureControlButtons();
+        anim = GetComponent<Animator>();
+        source = GetComponent<AudioSource>();
 
-        currentKnockbackHitTimer = knockbackHitTimer;
+        Vector3 characterScale = transform.localScale;
+        if (startAnimation)
+        {
+            characterScale.x = -1;
+        }
+        transform.localScale = characterScale;
     }
 
     // Update is called once per frame
     private void Update()
     {
         Jumping();
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            anim.SetTrigger("isDying");
+            movementSpeed = 0;
+            currentMovementSpeed = 0;
+            this.enabled = false;
+        }
     }
 
     void FixedUpdate()
@@ -81,22 +87,25 @@ public class PlayerMovement : MonoBehaviour
         return timer;
     }
 
-    private void DamageDisplay()
-    {
-        //UIManager.Instance.DecreaseHeart(playerID, gameLifes, Mathf.RoundToInt(damageTaken));
-    }
-
     private void Moving()
     {
         currentMovementSpeed = Input.GetAxis("Horizontal") * movementSpeed * Time.deltaTime;
         if (input.x > 0.2f || input.x < -0.2f || input.y > 0.2f || input.y < -0.2f)
         {
+            anim.SetBool("isRunning", true);
             rb.velocity = new Vector2(currentMovementSpeed, rb.velocity.y);
+
+            if(!source.isPlaying && !isInAir)
+            {
+                source.Play();
+            }
         }
         else
         {
+            anim.SetBool("isRunning", false);
             rb.velocity = new Vector2(0, rb.velocity.y);
         }
+
     }
 
     private void Jumping()
@@ -104,6 +113,8 @@ public class PlayerMovement : MonoBehaviour
         
         if (Input.GetKeyDown(jumpCode) && grounded)
         {
+            AudioManager.Instance.PlaySound(AudioFragments.Jump, AudioPlayers.Player);
+
             Debug.Log("Jumping");
             isInAir = true;
             jumpCount++;
@@ -122,9 +133,31 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "DeathZone")
+        if (collision.gameObject.tag == "DeathZone")
         {
-            Respawn();
+            movementSpeed = 0;
+            currentMovementSpeed = 0;
+            this.enabled = false;
+
+            Camera.main.transform.DOShakePosition(.3f, .3f, 20, 90, false, true);
+            AudioManager.Instance.PlaySound(AudioFragments.DeathPlayer, AudioPlayers.Player);
+            anim.SetTrigger("isDying");
+        }
+        else if (collision.gameObject.tag == "Enemy")
+        {
+            movementSpeed = 0;
+            currentMovementSpeed = 0;
+            this.enabled = false;
+
+            Camera.main.transform.DOShakePosition(.3f, .2f, 20, 90, false, true);
+            AudioManager.Instance.PlaySound(AudioFragments.DeathPlayer, AudioPlayers.Player);
+            anim.SetTrigger("isDying");
+        }
+
+        if (collision.gameObject.tag == "Ground")
+        {
+            jumpParticle.Play();
+            AudioManager.Instance.PlaySound(AudioFragments.TouchDown, AudioPlayers.Player);
         }
     }
 
@@ -151,45 +184,9 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void Respawn()
     {
-        if (collision.gameObject.GetComponent<Hitbox>())
-        {
-            Debug.Log("enemy hit here on this spot");
-            if (collision.gameObject.GetComponent<Hitbox>().Character)
-            {
-                Debug.Log("enemy hit here");
-                //if it doesnt come from the player itself
-                if (collision.gameObject.GetComponent<Hitbox>().Character != this)
-                {
-                    //take damage
-                    Debug.Log("enemy hit");
-                    GotHit(collision.gameObject.GetComponent<Hitbox>());
-                }
-            }
-        }
-    }
-
-    private void GotHit(Hitbox hit)
-    {
-        knockbackHit = true;
-        rb.isKinematic = true;
-
-        characterThatHitYou = hit.Character;
-        damageTaken += hit.Damage;
-
-        hitDirectionX = (characterThatHitYou.transform.position.x - this.transform.position.x);
-        hitDirectionY = (characterThatHitYou.transform.position.y - this.transform.position.y);
-
-        Vector2Int _dir = Vector2Int.zero;
-
-        _dir.x = hitDirectionX > 0 ? -1 : 1;
-        rb.velocity = new Vector2(_dir.x * hit.forceDirection.x * damageTaken, hit.forceDirection.y * damageTaken);
-    }
-
-    private void Respawn()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        GameManager.Instance.Reload();
         //UIManager.Instance.DecreaseHeart(playerID, gameLifes, Mathf.RoundToInt(damageTaken));
     }
 

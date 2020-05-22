@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class Clickable : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class Clickable : MonoBehaviour
         anim.enabled = false;
     }
 
-    void OnMouseOver()
+    private void OnMouseOver()
     {
         //If your mouse hovers over the GameObject with the script attached, output this message
         Debug.Log("Mouse is over GameObject.");
@@ -23,5 +24,16 @@ public class Clickable : MonoBehaviour
             interactable = false;
             anim.enabled = true;
         }
+    }
+
+    public void Destroy()
+    {
+        Destroy(this.gameObject);
+    }
+
+    public void CameraShake()
+    {
+        AudioManager.Instance.PlaySound(AudioFragments.TreeFalling, AudioPlayers.Interactable);
+        Camera.main.transform.DOShakePosition(.4f, .5f, 20, 90, false, true);
     }
 }
